@@ -1,0 +1,430 @@
+{
+  "folders": [
+    {
+      "name": "🌐 Web Frontend",
+      "path": "./web-frontend"
+    },
+    {
+      "name": "🤖 Android App",
+      "path": "./android-app"
+    },
+    {
+      "name": "🍎 iOS App",
+      "path": "./ios-app"
+    },
+    {
+      "name": "📦 Shared",
+      "path": "./shared"
+    }
+  ],
+  "settings": {
+    // Editor Settings
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "editor.rulers": [80, 120],
+    "editor.minimap.enabled": true,
+    "editor.suggestSelection": "first",
+    
+    // File Settings
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/node_modules": true,
+      "**/.gradle": true,
+      "**/build": true,
+      "**/.idea": true,
+      "**/Pods": true,
+      "**/*.xcworkspace": false,
+      "**/DerivedData": true
+    },
+    
+    // Search Settings
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/*.code-search": true,
+      "**/build": true,
+      "**/Pods": true,
+      "**/DerivedData": true,
+      "**/.gradle": true,
+      "**/dist": true,
+      "**/out": true
+    },
+    
+    // JavaScript/TypeScript Settings
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.suggest.autoImports": true,
+    "typescript.suggest.autoImports": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    
+    // React Settings
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact",
+      "typescript": "typescriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    
+    // Kotlin/Java Settings for Android
+    "[kotlin]": {
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true
+    },
+    "[java]": {
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true
+    },
+    
+    // Swift Settings for iOS
+    "[swift]": {
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true
+    },
+    
+    // XML Settings for Android
+    "[xml]": {
+      "editor.defaultFormatter": "DotJoshJohnson.xml",
+      "editor.tabSize": 4
+    },
+    
+    // CSS/SCSS Settings
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    
+    // Terminal Settings
+    "terminal.integrated.splitCwd": "workspaceRoot",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.cursorBlinking": true,
+    
+    // Git Settings
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.suggestSmartCommit": true,
+    
+    // ESLint Settings
+    "eslint.enable": true,
+    "eslint.workingDirectories": [
+      "./web-frontend"
+    ],
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    
+    // Prettier Settings
+    "prettier.requireConfig": false,
+    "prettier.singleQuote": true,
+    "prettier.semi": true,
+    "prettier.tabWidth": 2,
+    
+    // Gradle Settings
+    "java.configuration.updateBuildConfiguration": "automatic",
+    
+    // Performance Settings
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true,
+      "**/.hg/store/**": true,
+      "**/build/**": true,
+      "**/.gradle/**": true,
+      "**/Pods/**": true,
+      "**/DerivedData/**": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      // Web Development - React & Node.js
+      "dsznajder.es7-react-js-snippets",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "formulahendry.auto-rename-tag",
+      "xabikos.JavaScriptSnippets",
+      "christian-kohler.npm-intellisense",
+      "christian-kohler.path-intellisense",
+      "wix.vscode-import-cost",
+      "bradlc.vscode-tailwindcss",
+      
+      // Android Development
+      "dimagoltsman.vscode-android-emulator",
+      "vscjava.vscode-gradle",
+      "mathiasfrohlich.Kotlin",
+      "DotJoshJohnson.xml",
+      "vscjava.vscode-java-pack",
+      
+      // iOS Development
+      "sswg.swift-lang",
+      "vknabel.vscode-swiftlint",
+      "Orta.vscode-ios-common-files",
+      
+      // General Development Tools
+      "eamodio.gitlens",
+      "mhutchie.git-graph",
+      "MS-vsliveshare.vsliveshare",
+      "Gruntfuggly.todo-tree",
+      "aaron-bond.better-comments",
+      "usernamehw.errorlens",
+      "PKief.material-icon-theme",
+      "wayou.vscode-todo-highlight",
+      "streetsidesoftware.code-spell-checker"
+    ],
+    "unwantedRecommendations": []
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "🌐 Launch React App (Chrome)",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceFolder:🌐 Web Frontend}/src",
+        "sourceMaps": true
+      },
+      {
+        "name": "🌐 Debug Node.js Backend",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder:🌐 Web Frontend}/server/index.js",
+        "restart": true,
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      },
+      {
+        "name": "🤖 Debug Android App",
+        "type": "android",
+        "request": "launch",
+        "appSrcRoot": "${workspaceFolder:🤖 Android App}/app/src/main",
+        "apkFile": "${workspaceFolder:🤖 Android App}/app/build/outputs/apk/debug/app-debug.apk",
+        "adbPort": 5037
+      },
+      {
+        "name": "🍎 Debug iOS App (Simulator)",
+        "type": "lldb",
+        "request": "launch",
+        "name": "Debug iOS",
+        "program": "${workspaceFolder:🍎 iOS App}/build/Debug-iphonesimulator/MyApp.app",
+        "preLaunchTask": "build-ios-debug"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "🚀 Full Stack (Web Frontend + Backend)",
+        "configurations": [
+          "🌐 Launch React App (Chrome)",
+          "🌐 Debug Node.js Backend"
+        ],
+        "stopAll": true
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Install Web Dependencies",
+        "type": "shell",
+        "command": "npm install",
+        "options": {
+          "cwd": "${workspaceFolder:🌐 Web Frontend}"
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Start Web Development Server",
+        "type": "shell",
+        "command": "npm start",
+        "options": {
+          "cwd": "${workspaceFolder:🌐 Web Frontend}"
+        },
+        "problemMatcher": [],
+        "isBackground": true,
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated"
+        }
+      },
+      {
+        "label": "Build Web for Production",
+        "type": "shell",
+        "command": "npm run build",
+        "options": {
+          "cwd": "${workspaceFolder:🌐 Web Frontend}"
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Build Android Debug APK",
+        "type": "shell",
+        "command": "./gradlew assembleDebug",
+        "windows": {
+          "command": ".\\gradlew.bat assembleDebug"
+        },
+        "options": {
+          "cwd": "${workspaceFolder:🤖 Android App}"
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Build Android Release APK",
+        "type": "shell",
+        "command": "./gradlew assembleRelease",
+        "windows": {
+          "command": ".\\gradlew.bat assembleRelease"
+        },
+        "options": {
+          "cwd": "${workspaceFolder:🤖 Android App}"
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Clean Android Build",
+        "type": "shell",
+        "command": "./gradlew clean",
+        "windows": {
+          "command": ".\\gradlew.bat clean"
+        },
+        "options": {
+          "cwd": "${workspaceFolder:🤖 Android App}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Install iOS Pods",
+        "type": "shell",
+        "command": "pod install",
+        "options": {
+          "cwd": "${workspaceFolder:🍎 iOS App}"
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "build-ios-debug",
+        "type": "shell",
+        "command": "xcodebuild -workspace MyApp.xcworkspace -scheme MyApp -configuration Debug -sdk iphonesimulator -derivedDataPath ./build",
+        "options": {
+          "cwd": "${workspaceFolder:🍎 iOS App}"
+        },
+        "problemMatcher": ["$xcodebuild"],
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Lint All Projects",
+        "dependsOn": [
+          "Lint Web",
+          "Lint Android",
+          "Lint iOS"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "Lint Web",
+        "type": "shell",
+        "command": "npm run lint",
+        "options": {
+          "cwd": "${workspaceFolder:🌐 Web Frontend}"
+        },
+        "problemMatcher": ["$eslint-stylish"]
+      },
+      {
+        "label": "Lint Android",
+        "type": "shell",
+        "command": "./gradlew lint",
+        "windows": {
+          "command": ".\\gradlew.bat lint"
+        },
+        "options": {
+          "cwd": "${workspaceFolder:🤖 Android App}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Lint iOS",
+        "type": "shell",
+        "command": "swiftlint",
+        "options": {
+          "cwd": "${workspaceFolder:🍎 iOS App}"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+}
