@@ -233,26 +233,31 @@ Say to Claude: "Update .gitignore to prevent committing secrets and credentials"
    - **Developer contact information:** [your-email]
    - Click **SAVE AND CONTINUE** at bottom
 
-   **OAuth Consent Screen - Scopes:**
-   - Click **Audience** in left sidebar (or it may auto-advance)
-   - Click **ADD OR REMOVE SCOPES** button
-   - In the filter/search box, type: `userinfo.email`
-   - Check the box for: `.../auth/userinfo.email` (See your email address)
-   - In filter, type: `userinfo.profile`
-   - Check the box for: `.../auth/userinfo.profile` (See your personal info)
-   - In filter, type: `drive.file`
-   - Check the box for: `.../auth/drive.file` (See, edit, create, and delete only specific files)
-   - Click **UPDATE** at bottom
-   - Click **SAVE AND CONTINUE**
+   **OAuth Consent Screen - Audience (Test Users):**
+   - Click **Audience** in left sidebar
+   - You should see:
+     - Publishing status: Testing
+     - User type: External
+     - Test users section
+   - Under "Test users", click **+ Add users** button
+   - Enter your email address in the text field
+   - (Optional) Add 2-3 friend/family emails for beta testing
+   - Click **ADD** button
+   - The users will appear in a list below
 
-   **Test users:**
-   - Click **Audience** in left sidebar (if not already there)
-   - Scroll to "Test users" section
-   - Click **+ ADD USERS**
-   - Add your email (you'll be testing)
-   - Add 2-3 friend/family emails (optional, for beta testing)
-   - Click **ADD**
-   - Click **SAVE AND CONTINUE**
+   **OAuth Consent Screen - Scopes:**
+   - Click **Data Access** in left sidebar (this is where scopes are configured)
+   - Look for "Scopes for Google APIs" section
+   - Click **ADD OR REMOVE SCOPES** button
+   - A side panel will open with a list of scopes
+   - In the filter/search box at top, type: `userinfo.email`
+   - Check the box for: `.../auth/userinfo.email` (See your email address)
+   - Clear the search box, type: `userinfo.profile`
+   - Check the box for: `.../auth/userinfo.profile` (See your personal info)
+   - Clear the search box, type: `drive.file`
+   - Check the box for: `.../auth/drive.file` (See, edit, create, and delete only specific Google Drive files this app uses)
+   - Click **UPDATE** button at bottom of the side panel
+   - Click **SAVE** or **SAVE AND CONTINUE** if prompted
 
    **Summary/Review:**
    - Review your settings
