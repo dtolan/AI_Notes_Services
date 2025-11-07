@@ -236,29 +236,53 @@ Say to Claude: "Update .gitignore to prevent committing secrets and credentials"
 
 6. **Create OAuth Credentials (Web):**
    - Go to **APIs & Services** → **Credentials**
-   - Click **Create Credentials** → **OAuth client ID**
-   - **Application type:** Web application
-   - **Name:** `NIDOnote Web App`
-   - **Authorized JavaScript origins:**
-     - Click **Add URI**
-     - Add: `http://localhost:5173` (Vite dev server)
-     - Click **Add URI**
-     - Add: `https://nidonote.com` (production)
-   - **Authorized redirect URIs:**
-     - Click **Add URI**
-     - Add: `http://localhost:5173/auth/callback`
-     - Click **Add URI**
-     - Add: `https://nidonote.com/auth/callback`
-   - Click **Create**
+   - Click **+ CREATE CREDENTIALS** (blue button at top)
+   - Select **OAuth client ID**
+
+   **If prompted "OAuth consent screen not configured":**
+   - Click **CONFIGURE CONSENT SCREEN**
+   - Follow step 5 above (configure consent screen)
+   - Then return to this step
+
+   **Configure Web OAuth Client:**
+   - **Application type:** Select **Web application** from dropdown
+   - **Name:** `NIDOnote Web App` (you can name it anything)
+
+   - **Authorized JavaScript origins** section:
+     - Click **+ ADD URI** button
+     - Enter: `http://localhost:5173` (for Vite dev server)
+     - Click **+ ADD URI** again
+     - Enter: `https://nidonote.com` (for production, even if not live yet)
+
+   - **Authorized redirect URIs** section:
+     - Click **+ ADD URI** button
+     - Enter: `http://localhost:5173/auth/callback`
+     - Click **+ ADD URI** again
+     - Enter: `https://nidonote.com/auth/callback`
+
+   - Click **CREATE** button at bottom
+
+   **Important Note:**
+   - Google may show slightly different UI (e.g., "Authorized JavaScript origins" vs "Authorised JavaScript origins")
+   - The key is to add BOTH localhost (for development) AND production domain (for later)
+   - The redirect URIs must include `/auth/callback` path
 
    **SAVE THESE CREDENTIALS:**
-   - **Client ID:** `1234567890-abc...apps.googleusercontent.com`
-   - **Client Secret:** `GOCSPX-abc...`
-   - Copy to your `CREDENTIALS.txt` file:
-     ```
-     GOOGLE_CLIENT_ID=1234567890-abc...
-     GOOGLE_CLIENT_SECRET=GOCSPX-abc...
-     ```
+   A popup will appear with your credentials:
+   - **Your Client ID:** `1234567890-abc...apps.googleusercontent.com` (long string)
+   - **Your Client Secret:** `GOCSPX-abc...xyz` (shorter string starting with GOCSPX-)
+
+   **IMMEDIATELY copy these to your `CREDENTIALS.txt` file:**
+   ```
+   # Google OAuth Credentials (Web)
+   GOOGLE_CLIENT_ID=1234567890-abc...apps.googleusercontent.com
+   GOOGLE_CLIENT_SECRET=GOCSPX-abc...xyz
+   ```
+
+   **You can also access these later:**
+   - Go to **APIs & Services** → **Credentials**
+   - Click on "NIDOnote Web App" in the OAuth 2.0 Client IDs list
+   - Client ID is visible, click "SHOW" to see Client Secret
 
 7. **Create OAuth Credentials (Android - for later):**
    - Click **Create Credentials** → **OAuth client ID**
