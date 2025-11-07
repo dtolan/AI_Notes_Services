@@ -1,372 +1,615 @@
-# VS Code Multi-Root Workspace Documentation
+# NIDOnote - Your Family Nest for Notes, Calendar, and Events
 
-Complete guide and configuration files for setting up a Visual Studio Code multi-root workspace for cross-platform development with Web (React/Node.js), Android, and iOS applications.
-
----
-
-## 📚 Documentation Files
-
-This repository contains comprehensive documentation and example configurations to help you set up an efficient multi-platform development environment:
-
-### 1. **[QUICKSTART.md](QUICKSTART.md)** - Start Here! ⚡
-   - 5-minute setup guide
-   - Essential steps to get started quickly
-   - Common tasks and troubleshooting
-   - Perfect for developers who want to dive in immediately
-
-### 2. **[VSCODE_MULTIROOT_SETUP.md](VSCODE_MULTIROOT_SETUP.md)** - Complete Guide 📖
-   - Detailed explanation of multi-root workspaces
-   - Step-by-step instructions for all features
-   - Platform-specific tips and best practices
-   - Advanced configuration options
-   - Comprehensive troubleshooting guide
-
-### 3. **[example-project.code-workspace](example-project.code-workspace)** - Sample Configuration 🔧
-   - Ready-to-use workspace configuration file
-   - Includes settings for Web, Android, and iOS development
-   - Pre-configured debug configurations
-   - Automated build tasks
-   - Extension recommendations
+**Version:** 0.1.0 Alpha
+**Status:** Development (Month 1 - Web MVP)
+**Team:** Dan (Solo Developer) + Claude (AI Assistant)
 
 ---
 
-## 🎯 What You'll Learn
+## 🎯 Project Overview
 
-This documentation covers:
+**NIDOnote** (pronounced NEE-doh-NOTE) is a family-first organization application that helps families manage notes, calendars, events, and collaboration—all while keeping data safe in their own personal cloud storage.
 
-- ✅ Creating and managing multi-root workspaces in VS Code
-- ✅ Configuring settings for React, Node.js, Android, and iOS projects
-- ✅ Installing and configuring recommended extensions
-- ✅ Setting up debugging for all three platforms
-- ✅ Running multiple development servers simultaneously
-- ✅ Organizing project directories effectively
-- ✅ Best practices for cross-platform development
-- ✅ Performance optimization tips
-- ✅ Team collaboration strategies
+### What Makes NIDOnote Different?
+
+- **🔒 Privacy-First:** Your data stays in YOUR Google Drive/iCloud, not on our servers
+- **👨‍👩‍👧‍👦 Family-Focused:** Built for families, not adapted from business software
+- **🎉 Event Planning:** Built-in RSVP tracking and signup sheets for family gatherings
+- **💰 Free Guest Model:** Only the host pays for premium—guests join free
+- **🤖 AI-Powered:** Voice-to-text, smart suggestions, meeting summaries
+- **📱 Multi-Platform:** Web, Android, iOS (coming soon)
+
+---
+
+## 📚 Documentation
+
+This repository contains comprehensive documentation for building NIDOnote:
+
+### Strategic Planning
+1. **[PRODUCT_STRATEGY_NIDONOTE.md](PRODUCT_STRATEGY_NIDONOTE.md)** - Complete Product Strategy
+   - Market analysis and competitive positioning
+   - Feature breakdown and pricing tiers
+   - Go-to-market strategy and revenue projections
+   - 18-month product roadmap
+
+2. **[BRAND_IDENTITY_NIDONOTE.md](BRAND_IDENTITY_NIDONOTE.md)** - Brand Identity Guidelines
+   - Logo system and design specifications
+   - Color palette with complete specifications
+   - Typography system and usage
+   - Brand voice and tone guidelines
+   - UI component specifications
+   - Marketing asset templates
+
+### Technical Documentation
+3. **[TECHNICAL_ARCHITECTURE_NIDONOTE.md](TECHNICAL_ARCHITECTURE_NIDONOTE.md)** - Technical Architecture
+   - Complete system architecture
+   - Technology stack decisions
+   - Data models and schemas
+   - Security and privacy architecture
+   - Platform-specific implementation guides
+   - Real-time collaboration design
+   - AI integration strategy
+   - Scalability and deployment plans
+
+### Implementation Guides
+4. **[IMPLEMENTATION_GUIDE_PHASE1.md](IMPLEMENTATION_GUIDE_PHASE1.md)** ⭐ **START HERE!**
+   - Step-by-step setup instructions
+   - Day-by-day implementation plan (Month 1)
+   - Detailed tasks with responsible parties (Dan vs Claude)
+   - Environment setup guides
+   - Testing procedures
+   - Troubleshooting tips
+
+### Legal & Business
+5. **[TRADEMARK_FILING_CHECKLIST_NIDONOTE.md](TRADEMARK_FILING_CHECKLIST_NIDONOTE.md)** - Trademark Filing Guide
+   - Comprehensive trademark research checklist
+   - USPTO filing instructions
+   - Cost breakdowns ($700-$4,500)
+   - International filing strategy
+   - Domain and social media protection
+   - Maintenance requirements
 
 ---
 
 ## 🚀 Quick Start
 
-### Option 1: Use the Example Configuration (Recommended)
+### For Dan (Developer):
 
-1. **Copy the example workspace file:**
-   ```bash
-   cp example-project.code-workspace my-project.code-workspace
+**Prerequisites:**
+- Windows 10/11 or macOS
+- Node.js 20 LTS installed
+- Git installed
+- VS Code installed
+- Google account
+- GitHub account
+
+**To Begin Development:**
+
+1. **Read the Implementation Guide:**
+   ```
+   Open: IMPLEMENTATION_GUIDE_PHASE1.md
+   Start with: Week 1, Day 1, Task 1.1
    ```
 
-2. **Edit the file** and update folder paths to match your project structure
+2. **The guide will walk you through:**
+   - Creating GitHub repository
+   - Setting up Supabase (free backend)
+   - Configuring Google Cloud Project
+   - Initializing React + Vite web app
+   - Implementing authentication
+   - Building core features (notes, calendar, sync)
 
-3. **Open the workspace** in VS Code:
-   ```bash
-   code my-project.code-workspace
-   ```
+3. **Work with Claude:**
+   - Each task specifies: "Responsible: Dan" or "Responsible: Claude"
+   - Ask Claude to perform Claude-assigned tasks
+   - Dan handles account creation, testing, and verification
 
-4. **Install recommended extensions** when prompted
-
-5. **Start developing!** 🎉
-
-### Option 2: Follow the Guides
-
-1. Read **[QUICKSTART.md](QUICKSTART.md)** for a rapid setup
-2. Refer to **[VSCODE_MULTIROOT_SETUP.md](VSCODE_MULTIROOT_SETUP.md)** for detailed information
-3. Customize the workspace configuration to your needs
+**Estimated Time:** 75-95 hours over 4 weeks (20-25 hours/week for side project)
 
 ---
 
-## 📁 Recommended Project Structure
+## 🛠️ Technology Stack
 
-Your projects should be organized like this:
+### Month 1 (Web MVP) - Current Phase
+
+**Frontend:**
+- React 18.3 + TypeScript 5.3
+- Vite 5.0 (build tool)
+- TailwindCSS (styling)
+- Zustand (state management)
+- Dexie.js (IndexedDB local storage)
+- Yjs (conflict-free sync)
+
+**Backend (Minimal):**
+- Supabase (PostgreSQL, Auth, Edge Functions)
+- Free tier: 500MB DB, 50k monthly users
+
+**Cloud Storage:**
+- Google Drive API (user's personal storage)
+- OAuth 2.0 authentication
+
+**Hosting:**
+- Cloudflare Pages (web hosting)
+- Free tier: unlimited bandwidth
+
+**Cost:** $0/month (all free tiers)
+
+### Month 2 (Android App) - Next Phase
+
+**Mobile Framework:**
+- Flutter 3.16+ (Dart language)
+- Native Android focus
+- Google Drive integration
+- Free native voice-to-text
+
+**Cost:** $25 one-time (Google Play Developer account)
+
+### Month 3 (iOS + AI Features) - Future
+
+**iOS:**
+- Subcontracted to specialist
+- Native Swift or Flutter
+
+**AI:**
+- OpenAI Whisper (voice-to-text for web)
+- OpenAI GPT-4o-mini (summaries)
+- Cost: $0.03-0.20 per paid user per month
+
+---
+
+## 📁 Project Structure
 
 ```
-your-project-root/
-├── my-app.code-workspace          # Workspace configuration file
-├── web-frontend/                   # React/Node.js web application
-│   ├── package.json
+nidonote-monorepo/
+├── README.md                              # This file
+├── .gitignore                             # Git ignore rules
+├── CREDENTIALS.txt                        # Local only, NOT in git
+│
+├── docs/                                  # All documentation
+│   ├── PRODUCT_STRATEGY_NIDONOTE.md
+│   ├── BRAND_IDENTITY_NIDONOTE.md
+│   ├── TECHNICAL_ARCHITECTURE_NIDONOTE.md
+│   ├── IMPLEMENTATION_GUIDE_PHASE1.md
+│   ├── IMPLEMENTATION_GUIDE_PHASE2.md     # Coming in Month 2
+│   └── TRADEMARK_FILING_CHECKLIST_NIDONOTE.md
+│
+├── web-frontend/                          # React web application
 │   ├── src/
+│   │   ├── components/
+│   │   │   ├── ui/                       # Reusable UI components
+│   │   │   └── layout/                   # Layout components
+│   │   ├── features/
+│   │   │   ├── auth/                     # Authentication
+│   │   │   ├── notes/                    # Note taking
+│   │   │   ├── calendar/                 # Calendar & events
+│   │   │   └── spaces/                   # Shared spaces
+│   │   ├── lib/
+│   │   │   ├── supabase.ts               # Supabase client
+│   │   │   ├── google-drive.ts           # Drive integration
+│   │   │   ├── sync-engine.ts            # Sync logic
+│   │   │   └── db.ts                     # IndexedDB (Dexie)
+│   │   ├── hooks/                        # Custom React hooks
+│   │   ├── types/                        # TypeScript types
+│   │   └── utils/                        # Utility functions
 │   ├── public/
-│   └── .vscode/
-│       └── launch.json             # Web debugging config
-├── android-app/                    # Native Android application
-│   ├── app/
-│   ├── build.gradle
-│   ├── gradlew
-│   └── .vscode/
-│       └── launch.json             # Android debugging config
-├── ios-app/                        # Native iOS application
-│   ├── MyApp.xcodeproj
-│   ├── MyApp/
-│   ├── Podfile
-│   └── .vscode/
-│       └── launch.json             # iOS debugging config
-└── shared/                         # Shared code/resources (optional)
-    ├── types/
-    ├── constants/
-    └── utils/
+│   ├── .env.local                        # Environment variables (NOT in git)
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── tailwind.config.js
+│
+├── android-flutter/                       # Flutter Android app (Month 2)
+│   ├── lib/
+│   ├── android/
+│   ├── pubspec.yaml
+│   └── (to be created in Month 2)
+│
+└── supabase/                              # Backend configuration
+    ├── functions/                         # Edge Functions
+    ├── migrations/                        # Database migrations
+    └── config.toml
 ```
 
 ---
 
-## 🛠️ Technologies Covered
+## 🎨 Brand Identity
 
-### Web Development
-- **React** - Frontend framework
-- **Node.js** - Backend runtime
-- **TypeScript/JavaScript** - Programming languages
-- **npm/yarn** - Package managers
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
+### Colors
+- **Nest Brown:** `#8B6F47` - Primary brand color
+- **Sky Blue:** `#4A90E2` - Secondary, links, actions
+- **Soft Cream:** `#F5F1E8` - Backgrounds
+- **Fresh Green:** `#7CB342` - Success states
+- **Warm Orange:** `#FF9800` - Highlights, premium
 
-### Android Development
-- **Java/Kotlin** - Programming languages
-- **Gradle** - Build system
-- **Android SDK** - Development kit
-- **ADB** - Android Debug Bridge
+### Typography
+- **Primary:** Inter (UI and body text)
+- **Secondary:** Merriweather (marketing headlines)
 
-### iOS Development
-- **Swift/Objective-C** - Programming languages
-- **Xcode** - IDE and build tools
-- **CocoaPods/SPM** - Dependency managers
-- **LLDB** - Debugger
+### Logo Concept
+- Stylized nest shape incorporating "NIDO"
+- Warm, rounded curves
+- "NIDO" emphasized in caps, "note" in lowercase
+
+**Full details:** See [BRAND_IDENTITY_NIDONOTE.md](BRAND_IDENTITY_NIDONOTE.md)
 
 ---
 
-## 💡 Key Features of Multi-Root Workspaces
+## 💰 Pricing Strategy
 
-### Single Window, Multiple Projects
-Work on web and mobile apps simultaneously without switching windows.
+### Free Tier
+- 1 shared space
+- Unlimited notes, calendar events
+- 1 free guest
+- Google Drive sync
+- Mobile apps (Android + iOS)
+- Voice-to-text (Android app only, using device)
 
-### Unified Search
-Search across all projects with `Ctrl+Shift+F` to find code, references, and documentation quickly.
+### Essential Tier - $1.99/month
+- 3 shared spaces
+- 1 free guest
+- Web voice-to-text (5 min/month)
+- AI summaries (5/month)
+- Priority support
 
-### Shared Settings
-Configure editor settings, formatting rules, and extensions once for all projects.
+### Premium Tier - $6.99/month
+- 6 shared spaces
+- 5 free guests
+- Web voice-to-text (15 min/month)
+- AI summaries (20/month)
+- Smart suggestions
+- Custom themes
 
-### Independent Git Repositories
-Each project can have its own Git repository while being managed in one workspace.
+### Family Tier - $9.99/month
+- Unlimited shared spaces
+- Unlimited free guests
+- Web voice-to-text (30 min/month)
+- AI summaries (50/month)
+- All premium features
+- Family admin controls
 
-### Platform-Specific Configurations
-Customize settings per project folder (e.g., 2-space tabs for JavaScript, 4-space for Kotlin).
-
-### Simultaneous Debugging
-Debug web and backend APIs together, or run multiple build processes at once.
-
----
-
-## 📦 Recommended VS Code Extensions
-
-The example workspace includes recommendations for these essential extensions:
-
-### Web Development
-- ES7+ React/Redux/React-Native snippets
-- ESLint
-- Prettier - Code formatter
-- Auto Rename Tag
-- npm Intellisense
-- Path Intellisense
-
-### Android Development
-- Android iOS Emulator
-- Gradle for Java
-- Kotlin Language
-- XML Tools
-
-### iOS Development
-- Swift Language
-- SwiftLint
-- iOS Common Files
-
-### General Tools
-- GitLens (Git supercharged)
-- Live Share (Collaboration)
-- Todo Tree
-- Error Lens
-- Better Comments
+**Competitive Advantage:** Other family apps cost $30-40/month for similar features.
 
 ---
 
-## 🎨 Workspace Features Demonstrated
+## 📈 Development Roadmap
 
-The example configuration includes:
+### ✅ Phase 0: Planning & Design (Completed)
+- [x] Product strategy document
+- [x] Brand identity guidelines
+- [x] Technical architecture
+- [x] Implementation guide
+- [x] Trademark filing checklist
 
-### 1. **Smart File Exclusions**
-Automatically exclude `node_modules`, `build`, `Pods`, and other generated directories from search and file watching.
+### 🚧 Phase 1: Web MVP (Month 1 - Current)
+**Weeks 1-4 (75-95 hours)**
 
-### 2. **Platform-Specific Formatters**
-- Prettier for JavaScript/TypeScript/JSON
-- XML Tools for Android layouts
-- SwiftLint for iOS code
+- [ ] Week 1: Authentication & Environment Setup
+  - [ ] Google OAuth login
+  - [ ] Supabase integration
+  - [ ] Basic dashboard layout
 
-### 3. **Debug Configurations**
-Pre-configured debugging for:
-- Chrome (React apps)
-- Node.js (Backend APIs)
-- Android (APK debugging)
-- iOS (Simulator debugging)
+- [ ] Week 2: Notes & Google Drive Sync
+  - [ ] Note editor with auto-save
+  - [ ] IndexedDB local storage
+  - [ ] Google Drive sync engine
+  - [ ] Background sync (30s interval)
 
-### 4. **Automated Tasks**
-Run common tasks from the Command Palette:
-- Install dependencies
-- Start development servers
-- Build release versions
-- Run linters
-- Clean build artifacts
+- [ ] Week 3: Calendar & Events
+  - [ ] Calendar views (month/week/day)
+  - [ ] Event creation with RSVP
+  - [ ] Event sync to Drive
 
-### 5. **Compound Launch Configs**
-Launch multiple debuggers together (e.g., React frontend + Node.js backend).
+- [ ] Week 4: Shared Spaces & Polish
+  - [ ] Multiple shared spaces
+  - [ ] Yjs conflict-free sync
+  - [ ] Loading states & error handling
+  - [ ] Mobile responsive design
+  - [ ] End-to-end testing
+
+**Deliverable:** Working web application with core features
+
+### 📱 Phase 2: Android App (Month 2)
+**Weeks 5-8 (60-80 hours)**
+
+- [ ] Flutter setup and project initialization
+- [ ] UI implementation (notes, calendar)
+- [ ] Google Drive integration
+- [ ] Native voice-to-text (FREE!)
+- [ ] Sync with web app
+- [ ] Beta release on Google Play
+
+**Deliverable:** Android app with feature parity to web
+
+### 🍎 Phase 3: iOS + AI Features (Month 3)
+**Weeks 9-12 (80-100 hours)**
+
+- [ ] Subcontract iOS development
+- [ ] Implement web voice-to-text (Whisper API)
+- [ ] Add AI summaries (GPT-4o-mini)
+- [ ] Stripe subscription integration
+- [ ] Marketing website
+- [ ] Public beta launch
+
+**Deliverable:** Full platform launch (Web + Android + iOS)
+
+### 🚀 Phase 4: Growth & Advanced Features (Months 4-6)
+- [ ] Event planning: Signup sheets
+- [ ] Meal planning AI
+- [ ] Photo attachments
+- [ ] OneDrive support (in addition to Google Drive)
+- [ ] Custom templates
+- [ ] Advanced permissions
 
 ---
 
-## 🔥 Pro Tips
+## 🧪 Testing Strategy
 
-1. **Use Emojis in Folder Names**: 🌐 Web, 🤖 Android, 🍎 iOS - makes visual identification easier!
+### Manual Testing (Dan)
+- End-to-end user flows
+- Cross-browser testing (Chrome, Firefox, Safari, Edge)
+- Mobile responsive testing (DevTools)
+- Multi-device sync testing (incognito windows)
+- Google Drive integration verification
 
-2. **Name Your Terminals**: Right-click terminal tabs and give them descriptive names.
-
-3. **Keyboard Shortcuts**: Learn these for maximum productivity:
-   - `Ctrl+P` - Quick file open
-   - `Ctrl+Shift+F` - Search in all files
-   - `Ctrl+T` - Go to symbol
-   - `` Ctrl+` `` - Toggle terminal
-
-4. **Split Editors**: View web and mobile code side-by-side with `Ctrl+\`.
-
-5. **Workspace Tasks**: Access pre-configured tasks with `Ctrl+Shift+P` → "Tasks: Run Task".
+### Automated Testing (Future)
+- Unit tests: Vitest
+- Integration tests: React Testing Library
+- E2E tests: Playwright
+- Target: 80% code coverage
 
 ---
 
-## 🤝 Team Collaboration
+## 💸 Cost Breakdown
 
-### Sharing Your Workspace Configuration
+### Development Phase (Months 1-3)
+```
+Domain (nidonote.com):        $12/year (already purchased)
+Google Play Developer:        $25 one-time (Month 2)
+Supabase:                     $0 (free tier)
+Cloudflare:                   $0 (free tier)
+OpenAI API testing:           $10-20 (Month 3)
 
-1. **Commit the `.code-workspace` file** to version control
-2. **Use relative paths** for portability across different machines
-3. **Document setup steps** in a project README
-4. **Include extension recommendations** in the workspace file
+TOTAL: $47-57 for first 3 months
+```
 
-### Best Practices
+### Operating Costs (After Launch)
+```
+0-1,000 users:
+  - Supabase:                 $0 (free tier)
+  - Cloudflare:               $0 (free tier)
+  - OpenAI API:               $5-20/month
+  - Domain:                   $1/month
+  Total:                      $6-21/month
 
-- Keep platform-specific configurations in each project's `.vscode` folder
-- Use workspace settings for shared preferences (formatting, linting rules)
-- Document any manual setup steps (API keys, environment variables)
-- Consider using `.env.example` files for required environment variables
+1,000-5,000 users:
+  - Supabase Pro:             $25/month
+  - Cloudflare:               $0
+  - OpenAI API:               $20-50/month
+  - Email (Resend):           $0 (free tier)
+  Total:                      $46-76/month
+  Revenue (10% conversion):   $600-700/month
+  Profit:                     $550-650/month ✅
+
+5,000-10,000 users:
+  - Total costs:              $172-272/month
+  - Revenue (10% conversion): $6,000-7,000/month
+  - Profit:                   $5,700-6,800/month ✅
+```
+
+**Break-even:** ~50 users (5 paid subscribers at $4.99 avg)
+
+---
+
+## 🎯 Success Metrics
+
+### Month 1 Goals (Web MVP)
+- [ ] Authentication working
+- [ ] Can create/edit/delete notes
+- [ ] Calendar with events functional
+- [ ] RSVP tracking works
+- [ ] Google Drive sync reliable
+- [ ] Multiple shared spaces work
+- [ ] Mobile responsive
+- [ ] No critical bugs
+- [ ] Deployed to Cloudflare Pages
+
+### Month 2 Goals (Android)
+- [ ] Android app on Google Play (beta)
+- [ ] Feature parity with web
+- [ ] Native voice-to-text working
+- [ ] 10 beta testers using the app
+
+### Month 3 Goals (Launch)
+- [ ] iOS app (via subcontractor)
+- [ ] AI features live (voice, summaries)
+- [ ] Stripe subscriptions working
+- [ ] 100 total users (all platforms)
+- [ ] 10 paid subscribers
+- [ ] $50/month revenue
+
+### 6 Month Goals (Growth)
+- [ ] 1,000 users
+- [ ] 100 paid subscribers (10% conversion)
+- [ ] $500-700/month revenue
+- [ ] Break-even on costs
+- [ ] 4.5+ star app store rating
+- [ ] Trademark registered
+
+---
+
+## 🔒 Security & Privacy
+
+### User Data Protection
+- **Zero-knowledge architecture:** Backend never sees user content
+- **User-controlled storage:** All data in user's Google Drive/iCloud
+- **No data retention:** If user deletes Drive files, data is gone
+- **OAuth 2.0:** Secure authentication via Google/Apple/Microsoft
+- **HTTPS only:** All traffic encrypted in transit
+- **GDPR compliant:** User owns their data, full portability
+
+### What We Store (Backend)
+- Email address (for login)
+- Subscription tier and status
+- Payment information (via Stripe, we never see card details)
+- AI usage logs (for rate limiting)
+
+**We do NOT store:**
+- Note content
+- Calendar events
+- Family member data
+- Any user-generated content
+
+---
+
+## 📝 Trademark Status
+
+**Mark:** NIDOnote™
+**Domain:** nidonote.com ✅ SECURED
+**Status:** Pre-filing (filing planned for Month 2-3)
+**Classes:** 9 (Software) + 42 (SaaS)
+**Cost:** $700 (DIY) to $4,500 (with attorney)
+
+**Social Media:**
+- [ ] Instagram: @nidonote
+- [ ] Twitter/X: @nidonote
+- [ ] Facebook: /nidonote
+- [ ] TikTok: @nidonote
+- [ ] LinkedIn: /company/nidonote
+
+**Action Item:** Reserve all handles before public launch.
+
+**Full details:** See [TRADEMARK_FILING_CHECKLIST_NIDONOTE.md](TRADEMARK_FILING_CHECKLIST_NIDONOTE.md)
+
+---
+
+## 🤝 Development Workflow
+
+### Dan's Responsibilities
+- Account creation (Supabase, Google Cloud, GitHub)
+- Testing and verification
+- Manual user testing
+- Git commits and pushes
+- Deployment
+- Bug reporting
+- UI/UX decisions
+
+### Claude's Responsibilities
+- Code generation
+- Component creation
+- Configuration file setup
+- Documentation updates
+- Debug assistance
+- Architecture guidance
+- Code review
+
+### Communication Best Practices
+
+**Good Requests to Claude:**
+- ✅ "Create a note editor component with auto-save"
+- ✅ "I'm getting error 'Cannot read property of undefined' when clicking sync"
+- ✅ "Update the calendar to filter events by the current space"
+
+**Less Effective:**
+- ❌ "Make it work" (too vague)
+- ❌ "Fix the bug" (which bug?)
+- ❌ "Do the next thing" (specify task number)
 
 ---
 
 ## 🐛 Troubleshooting
 
-Common issues and solutions are covered in:
-- **[QUICKSTART.md](QUICKSTART.md)** - Quick fixes for common problems
-- **[VSCODE_MULTIROOT_SETUP.md](VSCODE_MULTIROOT_SETUP.md)** - Detailed troubleshooting section
+### Common Issues
 
-Quick checks:
-- ✅ Are all folders accessible and at the correct paths?
-- ✅ Are recommended extensions installed?
-- ✅ Is each project buildable independently?
-- ✅ Are debug configurations using correct paths?
-- ✅ Is Git installed and accessible?
+**"Cannot find module '@supabase/supabase-js'"**
+- Solution: Run `npm install` in `web-frontend` folder
+
+**"OAuth error: redirect_uri_mismatch"**
+- Solution: Check Google Cloud Console → Credentials → Authorized redirect URIs
+- Ensure `http://localhost:5173/auth/callback` is added
+
+**"Failed to sync to Google Drive"**
+- Solution: Check Google Drive API is enabled in Google Cloud Console
+- Verify OAuth scope includes `https://www.googleapis.com/auth/drive.file`
+- Re-authenticate (log out and log back in)
+
+**Notes not syncing between devices:**
+- Solution: Click manual sync button
+- Check network connection
+- Verify both devices are logged in with same Google account
+- Check Google Drive permissions
+
+**More troubleshooting:** See [IMPLEMENTATION_GUIDE_PHASE1.md](IMPLEMENTATION_GUIDE_PHASE1.md) → Troubleshooting section
 
 ---
 
-## 📖 Additional Resources
+## 📞 Support & Resources
 
-### Official Documentation
-- [VS Code Multi-Root Workspaces](https://code.visualstudio.com/docs/editor/multi-root-workspaces)
-- [VS Code Debugging Guide](https://code.visualstudio.com/docs/editor/debugging)
-- [VS Code Tasks](https://code.visualstudio.com/docs/editor/tasks)
+### Documentation
+- Implementation Guide: [IMPLEMENTATION_GUIDE_PHASE1.md](IMPLEMENTATION_GUIDE_PHASE1.md)
+- Technical Architecture: [TECHNICAL_ARCHITECTURE_NIDONOTE.md](TECHNICAL_ARCHITECTURE_NIDONOTE.md)
+- Brand Guidelines: [BRAND_IDENTITY_NIDONOTE.md](BRAND_IDENTITY_NIDONOTE.md)
 
-### Platform-Specific Resources
+### External Resources
+- [Supabase Documentation](https://supabase.com/docs)
+- [Google Drive API Reference](https://developers.google.com/drive/api/v3/reference)
 - [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/docs/)
-- [Android Developer Guides](https://developer.android.com/guide)
-- [iOS Developer Documentation](https://developer.apple.com/documentation/)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [Yjs Documentation](https://docs.yjs.dev/)
+
+### Getting Help
+- **Claude (AI Assistant):** Ask specific questions about code or setup
+- **GitHub Issues:** Track bugs and feature requests
+- **Stack Overflow:** General programming questions
+- **Supabase Discord:** Supabase-specific questions
 
 ---
 
-## 🎯 Getting Started Checklist
+## 📜 License
 
-Before diving into development:
+**Proprietary** - All rights reserved.
 
-- [ ] Read [QUICKSTART.md](QUICKSTART.md) for setup instructions
-- [ ] Copy and customize `example-project.code-workspace`
-- [ ] Update folder paths in the workspace file
-- [ ] Open the workspace in VS Code
-- [ ] Install recommended extensions
-- [ ] Verify each project builds successfully
-- [ ] Test at least one debug configuration
-- [ ] Set up version control for the workspace file
-- [ ] Share the configuration with your team
+NIDOnote™ is a trademark of Dan (pending registration).
+
+This software and documentation are confidential and proprietary. Not for public distribution without permission.
 
 ---
 
-## 📝 Customization Guide
+## 🎉 Getting Started
 
-### Adapting for Your Project
+**Ready to build NIDOnote?**
 
-1. **Update Folder Names**: Change folder names to match your actual project structure
-2. **Modify Paths**: Update all paths in the workspace file
-3. **Adjust Settings**: Customize editor settings, formatting rules, and preferences
-4. **Add/Remove Extensions**: Update extension recommendations based on your stack
-5. **Configure Tasks**: Add custom build, test, or deployment tasks
-6. **Update Debug Configs**: Modify debug configurations with your actual URLs and paths
+1. **Read this README** to understand the project ✅
+2. **Open [IMPLEMENTATION_GUIDE_PHASE1.md](IMPLEMENTATION_GUIDE_PHASE1.md)** 📖
+3. **Start with Week 1, Day 1, Task 1.1** 🚀
+4. **Work with Claude** to execute each task 🤖
+5. **Test as you go** to catch issues early 🧪
+6. **Commit frequently** to save your progress 💾
 
-### When to Use Multi-Root Workspaces
-
-✅ **Great for:**
-- Full-stack web + mobile apps
-- Monorepo-style projects
-- Related microservices
-- Shared component libraries
-- Projects with common team members
-
-❌ **Not ideal for:**
-- Completely unrelated projects
-- Projects with conflicting dependencies
-- When one project is rarely modified
-- Projects with different team ownership
+**Estimated Time to MVP:** 3-4 weeks (side project) or 2-3 weeks (full-time)
 
 ---
 
-## 💻 System Requirements
+## 🌟 Vision
 
-### Minimum Requirements
-- **VS Code**: Version 1.70 or later
-- **RAM**: 8GB minimum (16GB recommended for iOS development)
-- **Storage**: SSD recommended for better performance
+NIDOnote will become the go-to organization app for families who:
+- Value privacy and data ownership
+- Want powerful features without complexity
+- Need to coordinate with family members
+- Plan events and gatherings regularly
+- Prefer modern, beautiful software
 
-### Platform-Specific Requirements
-- **Windows 10/11** or **macOS 10.14+** or **Linux** (for web and Android)
-- **macOS** required for iOS development
-- **Android Studio** recommended for Android development
-- **Xcode** required for iOS development
+By keeping user data in their own cloud, we differentiate from competitors and align with growing privacy concerns. By focusing on families (not businesses), we create features that actually solve their problems.
 
----
-
-## 📄 License
-
-This documentation and example configurations are provided as-is for educational and development purposes.
+**Let's build something families will love!** 🏡❤️
 
 ---
 
-## 🙋 Contributing
-
-Found an issue or have a suggestion? Contributions are welcome!
-
-1. Identify the relevant documentation file
-2. Make your changes
-3. Test the configuration
-4. Submit your improvements
+**Project Started:** January 2025
+**Current Phase:** Month 1 - Web MVP
+**Last Updated:** January 2025
+**Next Milestone:** Android App (Month 2)
 
 ---
 
-## 🌟 Summary
+**Happy Coding! 🚀**
 
-This comprehensive documentation package provides everything you need to set up an efficient multi-platform development environment in Visual Studio Code. Whether you're building a web app with a mobile companion or managing a full-stack project across multiple platforms, these guides and configurations will help you work more productively.
-
-**Start with [QUICKSTART.md](QUICKSTART.md) and you'll be up and running in 5 minutes!**
-
----
-
-**Happy Multi-Platform Development! 🚀**
-
-*Last Updated: November 2025*
+*Built with ❤️ by Dan + Claude*
