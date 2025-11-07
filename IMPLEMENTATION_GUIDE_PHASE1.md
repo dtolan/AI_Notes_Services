@@ -207,32 +207,56 @@ Say to Claude: "Update .gitignore to prevent committing secrets and credentials"
    - Click **Enable**
 
 5. **Configure OAuth Consent Screen:**
-   - Go to **APIs & Services** → **OAuth consent screen**
-   - Choose **External** (unless you have Google Workspace)
+   - In left sidebar, click **APIs & Services** → **OAuth consent screen**
+
+   **You should see:**
+   - Left sidebar with: Overview, Branding, Audience, Clients, Data Access, Verification Center, Settings
+   - Main panel showing "OAuth Overview" with message: "You haven't configured any OAuth clients for this project yet."
+
+   **If you see "User Type" selection:**
+   - Choose **External** (allows anyone with Google account)
    - Click **Create**
-   - Fill in:
-     - **App name:** `NIDOnote`
-     - **User support email:** [your-email]
-     - **App logo:** (skip for now)
-     - **Application home page:** `https://nidonote.com` (even if not live yet)
-     - **Authorized domains:** `nidonote.com`
-     - **Developer contact:** [your-email]
-   - Click **Save and Continue**
 
-   - **Scopes:** Click **Add or Remove Scopes**
-     - Filter and select:
-       - `userinfo.email`
-       - `userinfo.profile`
-       - `drive.file` (app-created files only)
-     - Click **Update**
-     - Click **Save and Continue**
+   **If you already see the OAuth Overview (like in your screenshot):**
+   - Click **Branding** in the left sidebar
 
-   - **Test users:** Click **Add Users**
-     - Add your email (you'll be testing)
-     - Add 2-3 friend/family emails (optional)
-     - Click **Save and Continue**
+   **Fill in OAuth Consent Screen - Branding:**
+   - **App name:** `NIDOnote`
+   - **User support email:** Select your email from dropdown
+   - **App logo:** (skip for now - optional)
+   - **Application home page:** `https://nidonote.com`
+   - **Application privacy policy link:** (skip for now - we'll add later)
+   - **Application terms of service link:** (skip for now - we'll add later)
+   - **Authorized domains:**
+     - Click **+ ADD DOMAIN**
+     - Enter: `nidonote.com`
+   - **Developer contact information:** [your-email]
+   - Click **SAVE AND CONTINUE** at bottom
 
-   - Review and click **Back to Dashboard**
+   **OAuth Consent Screen - Scopes:**
+   - Click **Audience** in left sidebar (or it may auto-advance)
+   - Click **ADD OR REMOVE SCOPES** button
+   - In the filter/search box, type: `userinfo.email`
+   - Check the box for: `.../auth/userinfo.email` (See your email address)
+   - In filter, type: `userinfo.profile`
+   - Check the box for: `.../auth/userinfo.profile` (See your personal info)
+   - In filter, type: `drive.file`
+   - Check the box for: `.../auth/drive.file` (See, edit, create, and delete only specific files)
+   - Click **UPDATE** at bottom
+   - Click **SAVE AND CONTINUE**
+
+   **Test users:**
+   - Click **Audience** in left sidebar (if not already there)
+   - Scroll to "Test users" section
+   - Click **+ ADD USERS**
+   - Add your email (you'll be testing)
+   - Add 2-3 friend/family emails (optional, for beta testing)
+   - Click **ADD**
+   - Click **SAVE AND CONTINUE**
+
+   **Summary/Review:**
+   - Review your settings
+   - Click **BACK TO DASHBOARD** or navigate to **Credentials**
 
 6. **Create OAuth Credentials (Web):**
    - Go to **APIs & Services** → **Credentials**
