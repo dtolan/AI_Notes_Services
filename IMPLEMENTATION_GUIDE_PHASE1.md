@@ -689,23 +689,36 @@ export interface SpaceSettings {
 Say to Claude: "Create a Supabase client in web-frontend/src/lib/supabase.ts"
 
 **What Claude will do:**
-Create `web-frontend/src/lib/supabase.ts`:
-```typescript
-import { createClient } from '@supabase/supabase-js';
+Create `web-frontend/src/lib/supabase.ts` with:
+- Type-safe Supabase client
+- Environment variable validation
+- Auth configuration (auto-refresh, session persistence)
+- Helper functions: `isAuthenticated()`, `getCurrentUser()`, `signOut()`
+- Database type imports (placeholder for now)
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
-}
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+**Note:** The Database type will initially reference a placeholder. Once you set up your Supabase database schema, you can generate proper types using:
+```bash
+npx supabase gen types typescript --project-id YOUR_PROJECT_ID > src/types/database.ts
 ```
 
+**Step 3.1a - Create Placeholder Database Types:**
+Create `web-frontend/src/types/database.ts` to avoid TypeScript errors:
+```typescript
+export type Database = {
+  public: {
+    Tables: {}
+    Views: {}
+    Functions: {}
+  }
+}
+```
+This will be replaced later when you generate real types from your Supabase schema.
+
 **Verification:**
-- [ ] File created
+- [ ] Supabase client created at `web-frontend/src/lib/supabase.ts`
+- [ ] Placeholder database types created at `web-frontend/src/types/database.ts`
 - [ ] Imports environment variables correctly
+- [ ] Helper functions exported
 - [ ] No TypeScript errors
 
 ---
